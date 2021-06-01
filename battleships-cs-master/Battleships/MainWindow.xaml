@@ -1,0 +1,115 @@
+﻿<Window x:Class="Battleships.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:Battleships"
+		mc:Ignorable="d"
+		Title="Кораблики" Height="608" Width="890"
+		xml:space="preserve" Icon="ship.ico" Loaded="WindowLoaded" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+	<Window.Resources><Style TargetType="{x:Type Paragraph}">
+			<Setter Property="Margin" Value="0" />
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="Focusable" Value="False"/>
+		</Style></Window.Resources>
+	<Grid>
+		<RichTextBox Cursor="Arrow" BorderThickness="0" Focusable="False" IsReadOnly="True" IsReadOnlyCaretVisible="True" Block.LineHeight="16"  Background="#FF383838" Foreground="White" BorderBrush="Black" FontFamily="Consolas" Grid.ColumnSpan="2" IsInactiveSelectionHighlightEnabled="True">
+			<FlowDocument>
+				<Paragraph>                     Игрок                                             Компьютер               </Paragraph>
+				<Paragraph>     А   Б   В   Г   Д   Е   Ж   З   И   К              А   Б   В   Г   Д   Е   Ж   З   И   К  </Paragraph>
+				<Paragraph>   ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐          ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐</Paragraph>
+				<Paragraph> 1 │   │   │   │   │   │   │   │   │   │   │        1 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 2 │   │   │   │   │   │   │   │   │   │   │        2 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 3 │   │   │   │   │   │   │   │   │   │   │        3 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 4 │   │   │   │   │   │   │   │   │   │   │        4 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 5 │   │   │   │   │   │   │   │   │   │   │        5 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 6 │   │   │   │   │   │   │   │   │   │   │        6 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 7 │   │   │   │   │   │   │   │   │   │   │        7 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 8 │   │   │   │   │   │   │   │   │   │   │        8 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph> 9 │   │   │   │   │   │   │   │   │   │   │        9 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤          ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤</Paragraph>
+				<Paragraph>10 │   │   │   │   │   │   │   │   │   │   │       10 │   │   │   │   │   │   │   │   │   │   │</Paragraph>
+				<Paragraph>   └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘          └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘</Paragraph>
+				<Paragraph></Paragraph>
+				<Paragraph Foreground="#FFFBC15B">┌────────────────────────────────────────────────────────────────────────────────────────────────┘</Paragraph>
+				<Paragraph Foreground="#FFFBC15B">│   Компьютер: <Run Text="Приступим, расставляй корабли, сухопутная крыса!" Foreground="White"  x:Name="computerText"></Run></Paragraph>
+				<Paragraph Foreground="#FFFBC15B">└────────────────────────────────────────────────────────────────────────────────────────────────┐</Paragraph>
+				<Paragraph></Paragraph>
+				<Paragraph Foreground="#FF868DB9">┌───────────────────────────┬─────────────────────┬────────────────────────┬─────────────────────┐</Paragraph>
+				<Paragraph Foreground="#FF868DB9">│   Стрелки   -  движение   │ Пробел - выбор поля │  R - повернуть фигуру  │  E - отметка ядра   │</Paragraph>
+				<Paragraph Foreground="#FF868DB9">│                           │                     │                        │                     │</Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+		<RichTextBox Cursor="Arrow" BorderThickness="0" Focusable="False" x:Name="gameScreen" IsReadOnly="True" Block.LineHeight="16"  Background="Transparent" Foreground="White" BorderBrush="Black" FontFamily="Consolas" Grid.ColumnSpan="2" IsInactiveSelectionHighlightEnabled="True">
+			<FlowDocument>
+			</FlowDocument>
+		</RichTextBox>
+        <RichTextBox x:Name="mainMenu" Cursor="Arrow" BorderThickness="0" Focusable="False" IsReadOnly="True" IsReadOnlyCaretVisible="True" Block.LineHeight="16"  Background="#FF383838" Foreground="White" BorderBrush="Black" FontFamily="Consolas" Grid.ColumnSpan="2" IsInactiveSelectionHighlightEnabled="True">
+			<FlowDocument>
+				<Paragraph>&#10;</Paragraph>
+				<Paragraph Foreground="Red">                           ╔╗╔══╗╔══╗╔═══╗╔══╗╔═══╗─╔══╗╔╗╔╗╔╗╔══╗╔╗╔╗</Paragraph>
+				<Paragraph>                           ║║║╔═╝║╔╗║║╔═╗║║╔╗║║╔══╝─║╔╗║║║║║║║║╔═╝║║║║                         </Paragraph>
+				<Paragraph Foreground="Red">                           ║╚╝║──║║║║║╚═╝║║╚╝║║╚══╗─║║║║║║║║║╚╝║──║║║║                         </Paragraph>
+				<Paragraph>                           ║╔╗║──║║║║║╔══╝║╔╗║║╔═╗║─║║║║║║╔║║╔╗║──║║╔║                         </Paragraph>
+				<Paragraph Foreground="Red">                           ║║║╚═╗║╚╝║║║───║║║║║╚═╝║╔╝║║║║╚╝║║║║╚═╗║╚╝║                         </Paragraph>
+				<Paragraph>                           ╚╝╚══╝╚══╝╚╝───╚╝╚╝╚═══╝╚═╝╚╝╚══╝╚╝╚══╝╚══╝                         </Paragraph>
+				<Paragraph>&#10;&#10;&#10;</Paragraph>
+				<Paragraph>                                      ─┐</Paragraph>
+				<Paragraph>                                       │ Начать игру</Paragraph>
+				<Paragraph>                                       └──────────────────┐&#10;</Paragraph>
+				<Paragraph>                                      ─┐</Paragraph>
+				<Paragraph>                                       │ Информация</Paragraph>
+				<Paragraph>                                       └──────────────────┐&#10;</Paragraph>
+				<Paragraph>                                      ─┐</Paragraph>
+				<Paragraph>                                       │ Выйти из игры</Paragraph>
+				<Paragraph>                                       └──────────────────┐</Paragraph>
+				<Paragraph>&#10;&#10;&#10;</Paragraph>
+                <Paragraph TextAlignment="Center" Foreground="#FFA0A0A0">Выбирайте при помощи клавиши пробел</Paragraph>
+				<Paragraph TextAlignment="Center" Foreground="#FFA0A0A0">Created by Pavel Savanchuk for BSUIR</Paragraph>
+                <Paragraph TextAlignment="Center" Foreground="#FFA0A0A0">2021</Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+        <RichTextBox Cursor="Arrow" BorderThickness="0" Focusable="False" IsReadOnly="True" Block.LineHeight="16"  Background="Transparent" Foreground="White" BorderBrush="Black" FontFamily="Consolas" Grid.ColumnSpan="2" IsInactiveSelectionHighlightEnabled="True">
+			<FlowDocument>
+				<Paragraph><Run Foreground="#FF90BB46" x:Name="playerCursor" /></Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+        <RichTextBox Opacity="0" x:Name="information" Cursor="Arrow" BorderThickness="0" Focusable="False" IsReadOnly="True" IsReadOnlyCaretVisible="True" Block.LineHeight="16"  Background="#FF383838" Foreground="White" BorderBrush="Black" FontFamily="Consolas" Grid.ColumnSpan="2" IsInactiveSelectionHighlightEnabled="True">
+			<FlowDocument>
+				<Paragraph>&#10;</Paragraph>
+				<Paragraph Foreground="Red">                           ╔╗╔╗╔╗╔╗╔═════╗╔══╗╔═══╗╔╗──╔╗╔══╗╔╗╔╗╔╗╔╗╔═══╗</Paragraph>
+				<Paragraph>                           ║║║║║║║║║─╔╦╗─║║╔╗║║╔═╗║║║──║║║╔╗║║║║║║║║║║╔═╗║                         </Paragraph>
+				<Paragraph Foreground="Red">                           ║║║║║╚╝║║─║║║─║║║║║║╚═╝║║╚╗╔╝║║╚╝║║║║║║║║║║╚═╝║                         </Paragraph>
+				<Paragraph>                           ║║╔║║╔╗║║─╚╩╝─║║║║║║╔══╝║╔╗╔╗║║╔╗║║║║║║║╔║╚╗╔╗║                         </Paragraph>
+				<Paragraph Foreground="Red">                           ║╚╝║║║║║╚═╗─╔═╝║╚╝║║║───║║╚╝║║║║║║║╚╝║║╚╝║─║║║║                         </Paragraph>
+				<Paragraph>                           ╚══╝╚╝╚╝──╚═╝──╚══╝╚╝───╚╝──╚╝╚╝╚╝╚══╗╚══╝─╚╝╚╝                         </Paragraph>
+				<Paragraph>&#10;&#10;&#10;</Paragraph>
+				<Paragraph>  1. Начните игру при помощи главного меню, вашим противником будет компьютер.</Paragraph>
+                <Paragraph>  2. Игра начнется с размещения кораблей на игровом поле.</Paragraph>
+				<Paragraph>  3. Игрок должен разместить следующие корабли на своем игровом поле:</Paragraph>
+				<Paragraph>      - 4 (один корабль),</Paragraph>
+                <Paragraph>      - 3 (два корабля),</Paragraph>
+				<Paragraph>      - 2 (три корабля),</Paragraph>
+				<Paragraph>      - 1 (четыре корабля).</Paragraph>
+				<Paragraph>  4. После размещения кораблей игра начнется автоматически</Paragraph>
+                <Paragraph>     Компьютер стреляет в ответ автоматически.</Paragraph>
+				<Paragraph>  5. Все действия в игре выполняются при помощи следующих клавиш:</Paragraph>
+				<Paragraph>      - Стрелки - перемещение прицела,</Paragraph>
+                <Paragraph>      - Пробел - выстрел, подтверждение действия,</Paragraph>
+                <Paragraph>      - Enter - начало новой игры после окончания партии,</Paragraph>
+                <Paragraph>      - E - маркировка позиций на поле компьютера (для облегчения просмотра поля)),</Paragraph>
+                <Paragraph>      - R - ротация корабля на этапе планирования.</Paragraph>
+                <Paragraph>&#10;&#10;&#10;</Paragraph>
+                <Paragraph TextAlignment="Center" Foreground="Red">Нажмите пробел, чтобы вернуться</Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+	</Grid>
+</Window>
